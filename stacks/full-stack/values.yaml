@@ -14,7 +14,7 @@ elasticsearch:
 # Elasticsearch uri, do not change.
 es:
   endpoints:
-    - http://graviteeio-apim-elasticsearch-master-hl.gravitee.svc.cluster.local:9200
+    - http://graviteeio-apim-elasticsearch-master-hl.gravitee-k8s-demo.svc.cluster.local:9200
 
 # Deploy a mongoDB cluster.
 mongodb:
@@ -28,9 +28,14 @@ mongodb:
 
 # MongoDB uri, do not change.
 mongo:
-  uri: mongodb://graviteeio-apim-mongodb-replicaset.gravitee.svc.cluster.local/gravitee?connectTimeoutMS=30000
+  uri: mongodb://graviteeio-apim-mongodb-replicaset.gravitee-k8s-demo.svc.cluster.local:27017/gravitee?connectTimeoutMS=30000
 
 gateway:
+  resources:
+    limits:
+      memory: 1024Mi
+    requests:
+      memory: 512Mi
   ingress:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /$1
