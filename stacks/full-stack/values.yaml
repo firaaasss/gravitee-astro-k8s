@@ -37,6 +37,19 @@ gateway:
     requests:
       memory: 512Mi
   ingress:
+    ingressClassName: nginx
+    path: /gateway/?(.*)
+    pathType: ImplementationSpecific
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /$1
-    path: /gateway/?(.*)
+
+ui:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    path: /console(/.*)?
+    pathType: ImplementationSpecific
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+      
+

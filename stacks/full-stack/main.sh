@@ -8,6 +8,7 @@ echo ""
 echo "########################################"
 echo "# 🔐 Gravitee License Setup"
 echo "########################################"
+echo ""
 
 if [ ! -f "$LICENSE_KEY_FILE" ]; then
   echo "❌ Missing license.key file. Please copy license-example.key and paste your Gravitee license into it."
