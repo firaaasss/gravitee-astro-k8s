@@ -51,3 +51,12 @@ sudo minikube tunnel
 ## Access
 - Gravitee Console: http://apim.example.com/console
 - Credentials: `admin` / `admin`
+
+## TO DO:
+1. Change host to variable and allow host change with ingress in env variables
+2. Add Operator Support
+3. Add IDP support with OSS Keycloak and working JWT demo
+4. Add DCR flag deployment with Keycloak from 3
+5. Open Telemetry support with local New Relic
+6. Jaeger Analytics
+7. Anything else?

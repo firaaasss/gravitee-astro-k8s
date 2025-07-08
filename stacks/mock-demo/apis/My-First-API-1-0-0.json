@@ -1,0 +1,157 @@
+{
+  "export": {
+    "date": "2025-07-08T12:57:42.022902838Z",
+    "apimVersion": "4.8.0"
+  },
+  "api": {
+    "definitionVersion": "V4",
+    "type": "PROXY",
+    "listeners": [
+      {
+        "type": "HTTP",
+        "paths": [
+          {
+            "path": "/myfirstapi/",
+            "overrideAccess": false
+          }
+        ],
+        "pathMappings": [],
+        "entrypoints": [
+          {
+            "type": "http-proxy",
+            "qos": "AUTO"
+          }
+        ],
+        "servers": []
+      }
+    ],
+    "endpointGroups": [
+      {
+        "name": "default-group",
+        "type": "http-proxy",
+        "loadBalancer": {
+          "type": "ROUND_ROBIN"
+        },
+        "endpoints": [
+          {
+            "name": "default",
+            "type": "http-proxy",
+            "weight": 1,
+            "inheritConfiguration": false,
+            "configuration": {
+              "target": "https://api.gravitee.io/echo"
+            },
+            "services": {},
+            "secondary": false,
+            "tenants": []
+          }
+        ],
+        "services": {}
+      }
+    ],
+    "analytics": {
+      "enabled": true
+    },
+    "flowExecution": {
+      "mode": "DEFAULT",
+      "matchRequired": false
+    },
+    "flows": [],
+    "id": "805b8b7e-7723-4912-9b8b-7e7723b912e9",
+    "name": "My First API",
+    "description": "Example of creating my first API using the Management API (mAPI)",
+    "apiVersion": "1.0.0",
+    "deployedAt": "2025-07-08T12:57:36.177Z",
+    "createdAt": "2025-07-08T12:55:50.59Z",
+    "updatedAt": "2025-07-08T12:57:36.177Z",
+    "disableMembershipNotifications": false,
+    "groups": [],
+    "state": "STARTED",
+    "visibility": "PRIVATE",
+    "labels": [],
+    "lifecycleState": "CREATED",
+    "tags": [],
+    "primaryOwner": {
+      "id": "707af449-c459-4400-baf4-49c459740006",
+      "email": "",
+      "displayName": "admin",
+      "type": "USER"
+    },
+    "categories": [],
+    "originContext": {
+      "origin": "MANAGEMENT"
+    },
+    "responseTemplates": {}
+  },
+  "members": [
+    {
+      "id": "707af449-c459-4400-baf4-49c459740006",
+      "displayName": "admin",
+      "roles": [
+        {
+          "name": "PRIMARY_OWNER",
+          "scope": "API"
+        }
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "key": "email-support",
+      "name": "email-support",
+      "format": "MAIL",
+      "value": "${(api.primaryOwner.email)!''}",
+      "defaultValue": "support@change.me"
+    }
+  ],
+  "pages": [],
+  "plans": [
+    {
+      "definitionVersion": "V4",
+      "flows": [
+        {
+          "id": "1c8c28f5-68d1-4965-8c28-f568d1b9654e",
+          "enabled": true,
+          "selectors": [
+            {
+              "type": "HTTP",
+              "path": "/",
+              "pathOperator": "STARTS_WITH",
+              "methods": []
+            }
+          ],
+          "request": [],
+          "response": [],
+          "subscribe": [],
+          "publish": [],
+          "connect": [],
+          "interact": [],
+          "tags": []
+        }
+      ],
+      "id": "efd6d25b-952c-4cff-96d2-5b952cccff05",
+      "name": "Keyless",
+      "description": "",
+      "apiId": "805b8b7e-7723-4912-9b8b-7e7723b912e9",
+      "security": {
+        "type": "KEY_LESS",
+        "configuration": {}
+      },
+      "mode": "STANDARD",
+      "characteristics": [],
+      "commentMessage": "",
+      "commentRequired": false,
+      "createdAt": "2025-07-08T12:57:30.181Z",
+      "excludedGroups": [],
+      "generalConditions": "",
+      "order": 1,
+      "publishedAt": "2025-07-08T12:57:33.183Z",
+      "status": "PUBLISHED",
+      "tags": [],
+      "type": "API",
+      "updatedAt": "2025-07-08T12:57:33.183Z",
+      "validation": "MANUAL"
+    }
+  ],
+  "apiMedia": []
+}
