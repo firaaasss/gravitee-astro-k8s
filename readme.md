@@ -17,6 +17,7 @@ To start your minikube cluster and expose your services with the ingress addon, 
 minikube start
 minikube addons enable ingress
 ```
+Note: It's important to enable ingress to expose your services with the minikube tunnel command below.
 
 ## Setup
 ```bash
